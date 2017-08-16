@@ -664,6 +664,18 @@ function removeAttractionFromDOM(category, attractionData) {
 }
 
 
+const currentHash = location.hash;
+
+if(currentHash){
+  fetch('/api/itineraries/1')
+
+  .then(result=>result.json())
+  .then(data=>{
+    console.log(data)
+  })
+  .catch(console.error)
+}
+
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {

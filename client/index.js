@@ -125,3 +125,16 @@ function removeAttractionFromDOM(category, attractionData) {
   // Animate map to default position & zoom.
   map.flyTo({ center: [-74.0, 40.731], zoom: 12.3 });
 }
+
+
+const currentHash = location.hash;
+
+if(currentHash){
+  fetch('/api/itineraries/1')
+
+  .then(result=>result.json())
+  .then(data=>{
+    console.log(data)
+  })
+  .catch(console.error)
+}
