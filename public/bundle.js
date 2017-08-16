@@ -672,6 +672,17 @@ if(currentHash){
   .then(result=>result.json())
   .then(data=>{
     console.log(data)
+
+    buildAttractionAssets('hotels',data.hotels[0]);
+    
+    data.activities.forEach(function(activity){
+      buildAttractionAssets("activities",activity)
+    });
+
+    data.restaurants.forEach(function(restaurant){
+      buildAttractionAssets("restaurants",restaurant)
+    });
+    // buildAttractionAssets("activities", data.activities[0])
   })
   .catch(console.error)
 }

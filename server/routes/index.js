@@ -26,7 +26,7 @@ router.get('/itineraries/:id',function(req,res,next){
   Itinerary.findOne({where:{
     id: req.params.id,
   },
-  include: [{ all: true }] 
+  include: [{ all: true, nested: true }] 
 }
 )
   .then((data)=>
